@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles({
-    page: {
-        backgroundColor: "tomato"
-    }
-})
+import React from 'react';;
 
 const Messages = () => {
-    const classes = useStyles();
-
     return ( 
-        <div className={classes.page}>
+        <div>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
+            <h1>Aqui é a pagina do Messages</h1>
             <h1>Aqui é a pagina do Messages</h1>
         </div>
      );

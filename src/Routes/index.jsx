@@ -1,23 +1,9 @@
-import React from 'react';
-import {
-    Switch,
-    Route,
-} from "react-router-dom";
-
-import { Dashboard, Messages } from "../pages";
-
+import {Route, Switch} from 'react-router-dom';
 
 const Routes = () => {
-    return (
-        <Switch>
-            <Route path="/" exact>
-                <Dashboard />
-            </Route>
-            <Route path="/messages">
-                <Messages/>
-            </Route>
-        </Switch>
-    );
+    return(
+        <div>
+        
+        </div>
+    )
 }
-
-export default Routes;
