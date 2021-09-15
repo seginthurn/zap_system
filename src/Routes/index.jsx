@@ -1,9 +1,19 @@
-import {Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Dashboard from '../pages/Dashboard';
+import Messages from '../pages/Messages';
 
 const Routes = () => {
     return(
-        <div>
-        
-        </div>
+        <Switch>
+            <Route path="/" exact>
+                <Dashboard/>
+            </Route>
+
+            <Route path="/messages">
+                <Messages/>
+            </Route>
+        </Switch>
     )
 }
+
+export default Routes;
