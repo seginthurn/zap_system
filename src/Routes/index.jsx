@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Messages from '../pages/Messages';
 

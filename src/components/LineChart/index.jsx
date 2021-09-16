@@ -1,5 +1,4 @@
 import { Paper } from '@material-ui/core';
-import { PausePresentationTwoTone } from '@material-ui/icons';
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
