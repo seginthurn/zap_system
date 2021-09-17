@@ -1,16 +1,15 @@
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Messages from '../pages/Messages';
 
 const Routes = () => {
-    return(
+    return (
         <Switch>
             <Route path="/" exact>
-                <Dashboard/>
+                <Dashboard />
             </Route>
-
             <Route path="/messages">
-                <Messages/>
+                <Messages />
             </Route>
         </Switch>
     )

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
 import { Select, FormControl, InputLabel, MenuItem, makeStyles } from '@material-ui/core';
-import { useDispatch, useSelector} from 'react-redux';
-import { selectChannel, changeChannel} from '../../redux/channelSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectChannel, changeChannel } from '../../redux/channelSlice';
 
 const ChannelSelect = () => {
     const channel = useSelector(selectChannel);
@@ -19,15 +19,15 @@ const ChannelSelect = () => {
 
     };
 
-    const createChannels = () =>{
-        return(
+    const createChannels = () => {
+        return (
             apiData.map(item => <MenuItem key={item.id} value={item.name}>{item.name}</MenuItem>)
         )
     }
 
-   useEffect(() => {
+    useEffect(() => {
         getApi();
-    },[channel]);
+    }, [channel]);
 
     return (
         <React.Fragment>
@@ -48,9 +48,6 @@ const ChannelSelect = () => {
                     }
                 </Select>
             </FormControl>
-            <div>
-                <span>{channel}</span>
-            </div>
         </React.Fragment>
     );
 }

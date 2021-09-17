@@ -51,9 +51,6 @@ const TriggerSelect = () => {
 
                 </Select>
             </FormControl>
-            <div>
-                <span>{trigger}</span>
-            </div>
         </React.Fragment>
     );
 }

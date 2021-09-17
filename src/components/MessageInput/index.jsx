@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
-import { TextField, FormControl} from '@material-ui/core';
+import { TextField, FormControl } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectMessage, changeMessage } from '../../redux/messageSlice';
 import { selectTrigger } from '../../redux/triggerSlice';

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ChannelSelect from '../../components/ChannelSelect';
 import TriggerSelect from '../../components/TriggerSelect';
 import MessageInput from '../../components/MessageInput';
+import TimerInput from '../../components/TimerInput';
 
 const useStyles = makeStyles({
     root: {
@@ -27,28 +28,28 @@ const Messages = () => {
 
     return (
         <React.Fragment>
-                <Grid container className={classes.root} spacing={2}>
-                    <Grid item sx={12} sm={6}>
-                        <Typography variant="h3" color="primary">Mensagens</Typography>
-                    </Grid>
-                    <Grid item sx={6}>
-                        <Button variant="outlined" color="primary">Pequisar</Button>
-                    </Grid>
-                    <Grid item sx={6}>
-                        <Button variant="contained" color="primary">Nova Mensagem</Button>
-                    </Grid>
+            <Grid container className={classes.root} spacing={2}>
+                <Grid item sx={12} sm={6}>
+                    <Typography variant="h3" color="primary">Mensagens</Typography>
                 </Grid>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={3}>
-                        <TriggerSelect />
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <ChannelSelect />
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <MessageInput />
-                    </Grid>
+                <Grid item sx={6}>
+                    <Button variant="outlined" color="primary">Pequisar</Button>
                 </Grid>
+                <Grid item sx={6}>
+                    <Button variant="contained" color="primary">Nova Mensagem</Button>
+                </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={3}>
+                    <TriggerSelect />
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                    <ChannelSelect />
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                    <TimerInput />
+                </Grid>
+            </Grid>
         </React.Fragment>
     );
 }
