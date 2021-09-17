@@ -1,51 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
 import { Select, FormControl, InputLabel, MenuItem, makeStyles } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
-import { changeTrigger } from '../../redux/triggerSlice';
-
-
-const useStyles = makeStyles({
-    root: {
-
-    }
-})
+import { useDispatch, useSelector } from 'react-redux';
+import { selectTrigger, changeTrigger } from '../../redux/triggerSlice';
 
 const TriggerSelect = () => {
-    const classes = useStyles();
-
+    const trigger = useSelector(selectTrigger);
+    const [apiData, setApiData] = useState([]);
     const dispatch = useDispatch();
-    const [data, setData] = useState([]);
-    const [trigger, setTrigger] = useState('');
-
-    const handleChange = (event) => {
-        dispatch(changeTrigger(trigger));
-        console.log(trigger)
-    };
 
     const getApi = async () => {
         try {
             const response = await api.get(`/triggers`);
-            setData(response.data);
-        } catch (error) {
+            setApiData(response.data);
 
+        } catch (error) {
+            alert("Erro GET na api");
         }
 
     };
 
+    const createTriggers = () => {
+        return (
+            apiData.map(item => <MenuItem key={item.id} value={item.name}>{item.name}</MenuItem>)
+        )
+    }
+
     useEffect(() => {
         getApi();
-    });
+    }, [trigger]);
 
     return (
         <React.Fragment>
-            <FormControl variant="outlined" onChange={handleChange()} fullWidth={true}>
+            <FormControl variant="outlined" fullWidth={true}>
                 <InputLabel id="trigger">Trigger</InputLabel>
                 <Select
                     labelId="trigger"
                     id="trigger"
                     value={trigger}
-                    onChange={e => setTrigger(e.target.value)}
+                    onChange={e => dispatch(changeTrigger(e.target.value))}
                     label="trigger"
 
                 >
@@ -53,10 +46,14 @@ const TriggerSelect = () => {
                         <em>Nenhum</em>
                     </MenuItem>
                     {
-                        data.map(item => <MenuItem value={item.id}>{item.name}</MenuItem>)
+                        createTriggers()
                     }
+
                 </Select>
             </FormControl>
+            <div>
+                <span>{trigger}</span>
+            </div>
         </React.Fragment>
     );
 }

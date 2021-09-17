@@ -1,20 +1,20 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-    name: 'trigger',
+    name: 'timer',
     initialState: {
-        triggerId: ''
+        name: ''
     },
     reducers: {
-        changeTrigger(state, {payload}){
-            return{
+        changeTrigger(state, { payload }) {
+            return {
                 ...state,
-                triggerId: payload,
+                name: payload,
             }
         }
     }
 })
 
-export const {changeTrigger} = slice.actions;
+export const { changeTrigger } = slice.actions;
 export default slice.reducer;
-export const selectTriggerName = state => state.name; 
+export const selectTrigger = state => state.trigger.name;

@@ -25,14 +25,12 @@ const Header = () => {
             <AppBar sytle={classes.header}>
                 <Toolbar variant="dense">
                     <Typography variant="h6" color="white">
-                        LOREM IPSUM
+                        ZAP SYSTEM
                     </Typography>
                     <div className={classes.grow} />
                     <Button variant="outlined" color="inherit" className={classes.Button} startIcon={<DataUsageIcon />}>
                         <Link to='/' className={classes.routeLink}>Dashboard</Link>
                     </Button>
-
-
 
                     <Button variant="outlined" color="inherit" className={classes.Button} startIcon={<ChatBubbleSharp />}>
                         <Link to='/messages' className={classes.routeLink}>Mensagens</Link>

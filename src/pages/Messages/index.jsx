@@ -12,9 +12,7 @@ const useStyles = makeStyles({
 
 const Messages = () => {
     const classes = useStyles();
-
     const [error, setError] = useState(false);
-    const [message, setMessage] = useState('Insira seu nome aqui');
     const [form, setForm] = useState('');
 
     function handleInputForm(event) {

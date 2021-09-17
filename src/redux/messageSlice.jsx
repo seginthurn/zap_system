@@ -1,25 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-    name: "message",
+    name: 'message',
     initialState: {
-        id: null,
+        id: 0,
         channel: '',
         trigger: '',
         timer: '',
-        message: '',
+        message: ''
     },
     reducers: {
-        changeMessage(state, {payload}){
-            return({
+        changeMessage(state, { payload }) {
+            return {
                 ...state,
-                payload
-            })
+                id: payload.id,
+                channel: payload.channel,
+                trigger: payload.trigger,
+                timer: payload.timer,
+                message: payload.message
+
+            }
         }
     }
 })
 
-
-export const {changeMessage} = slice.actions;
+export const { changeMessage } = slice.actions;
 export default slice.reducer;
-export const selectMessage = state => state.name; 
+export const selectMessage = state => state.message.message;
+export const selectTimer = state => state.message.timer;
