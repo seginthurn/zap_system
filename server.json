@@ -1,39 +1,25 @@
 {
   "messages": [
     {
+      "id": 1,
       "channel": "sms",
       "trigger": "abertura_conta",
-      "timer": "07:00",
-      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
-      "id": 1
+      "timer": "15:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
     },
     {
+      "id": 2,
       "channel": "sms",
-      "trigger": "abertura_conta",
-      "timer": "9999",
-      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
-      "id": 2
+      "trigger": "fez_pix",
+      "timer": "5:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
     },
     {
-      "channel": "sms",
+      "id": 3,
+      "channel": "whatsapp",
       "trigger": "abertura_conta",
-      "timer": "18:45",
-      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
-      "id": 3
-    },
-    {
-      "channel": "sms",
-      "trigger": "abertura_conta",
-      "timer": "18:45",
-      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
-      "id": 4
-    },
-    {
-      "channel": "sms",
-      "trigger": "abertura_conta",
-      "timer": "18:45",
-      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
-      "id": 5
+      "timer": "73:00",
+      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
     }
   ],
   "channels": [
@@ -65,7 +51,7 @@
     },
     {
       "id": 4,
-      "name": "alterou_dados_pessois"
+      "name": "alterou_dados_pessoais"
     },
     {
       "id": 5,
@@ -73,7 +59,7 @@
     },
     {
       "id": 6,
-      "name": "fex_transferencia_outro_banco"
+      "name": "fez_transferencia_outro_banco"
     },
     {
       "id": 7,

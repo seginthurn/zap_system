@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import api from "../../api/api";
-import { Select, FormControl, InputLabel, MenuItem} from '@material-ui/core';
+import React, { useMemo, useState } from 'react';
+import api from "../../../Utils/api/api";
+import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectTrigger, changeTrigger } from '../../redux/triggerSlice';
-
-const TriggerSelect = () => {
+import { selectTrigger, changeTrigger } from '../../../redux/triggerSlice';
+import { modalError } from '../../Modals/modals';
+const TriggerSelect = (props) => {
     const trigger = useSelector(selectTrigger);
     const [apiData, setApiData] = useState([]);
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const TriggerSelect = () => {
             setApiData(response.data);
 
         } catch (error) {
-            alert("Erro GET na api");
+            modalError("Algo de errado aconteceu, lamentamos por isso");
         }
 
     };
@@ -26,13 +26,13 @@ const TriggerSelect = () => {
         )
     }
 
-    useEffect(() => {
+    useMemo(() => {
         getApi();
-    }, [trigger]);
+    }, []);
 
     return (
         <React.Fragment>
-            <FormControl variant="outlined" fullWidth={true}>
+            <FormControl variant="outlined" required={props.required} fullWidth={true}>
                 <InputLabel id="trigger">Trigger</InputLabel>
                 <Select
                     labelId="trigger"
@@ -40,7 +40,6 @@ const TriggerSelect = () => {
                     value={trigger}
                     onChange={e => dispatch(changeTrigger(e.target.value))}
                     label="trigger"
-
                 >
                     <MenuItem value="">
                         <em>Nenhum</em>
@@ -48,7 +47,6 @@ const TriggerSelect = () => {
                     {
                         createTriggers()
                     }
-
                 </Select>
             </FormControl>
         </React.Fragment>

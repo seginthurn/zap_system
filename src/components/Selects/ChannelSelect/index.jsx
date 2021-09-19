@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import api from "../../api/api";
+import api from "../../../Utils/api/api";
 import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectChannel, changeChannel } from '../../redux/channelSlice';
+import { selectChannel, changeChannel } from '../../../redux/channelSlice';
+import { modalError } from '../../Modals/modals';
 
-const ChannelSelect = () => {
+const ChannelSelect = (props) => {
     const channel = useSelector(selectChannel);
     const dispatch = useDispatch();
     const [apiData, setApiData] = useState([]);
@@ -15,7 +16,7 @@ const ChannelSelect = () => {
             const response = await api.get(`/channels`);
             setApiData(response.data);
         } catch (error) {
-            alert("Erro GET na api");
+            modalError("Algo de errado aconteceu, lamentamos por isso");
         }
 
     };
@@ -32,7 +33,7 @@ const ChannelSelect = () => {
 
     return (
         <React.Fragment>
-            <FormControl variant="outlined" fullWidth={true}>
+            <FormControl required={props.required} variant="outlined" fullWidth={true}>
                 <InputLabel id="channel">Channel</InputLabel>
                 <Select
                     labelId="channel"

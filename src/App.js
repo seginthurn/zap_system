@@ -1,9 +1,7 @@
 import React from 'react';
 import Routes from './Routes/';
 import Header from './components/Header';
-
-
-
+import './App.css';
 
 function App() {
 
@@ -16,5 +14,8 @@ function App() {
 }
 
 export default App;
+
+
+
 
 

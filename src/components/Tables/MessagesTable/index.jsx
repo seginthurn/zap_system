@@ -2,11 +2,12 @@ import React, { Fragment } from 'react';
 import { Paper, Table, TableContainer, TableBody, TableHead, TableRow, TableCell, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MessageIcon from '@material-ui/icons/Message';
-import api from '../../api/api';
+import api from '../../../Utils/api/api';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { changeMessage, selectMessage } from '../../redux/messageSlice';
-
+import { changeMessage, selectMessage } from '../../../redux/messageSlice';
+import { modalDeleteConfirm, modalMessage } from '../../Modals/modals';
+import './MessageTable.css';
 
 function MessagesTable() {
     const messages = useSelector(selectMessage);
@@ -22,9 +23,9 @@ function MessagesTable() {
     };
 
     const deleteItem = async (id) => {
-        await api.delete(`/messages/${id}`);
+        await modalDeleteConfirm(id);
         getApi();
-    }
+    };
 
     const createRow = () => {
         return messages.map(item => {
@@ -34,11 +35,9 @@ function MessagesTable() {
                     <TableCell>{item.channel}</TableCell>
                     <TableCell>{item.timer}</TableCell>
                     <TableCell>
-                        <IconButton onClick={() => alert(item.message)}>
+                        <IconButton onClick={() => modalMessage(item.message)}>
                             <MessageIcon />
                         </IconButton>
-                    </TableCell>
-                    <TableCell>
                         <IconButton onClick={() => deleteItem(item.id)}>
                             <DeleteIcon />
                         </IconButton>
@@ -50,15 +49,14 @@ function MessagesTable() {
 
     return (
         <Fragment>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} elevation={24} className="MessageTable">
                 <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>Trigger</TableCell>
                             <TableCell>Canal</TableCell>
                             <TableCell>Timer</TableCell>
-                            <TableCell>Mensagem</TableCell>
-                            <TableCell></TableCell>
+                            <TableCell>Ações</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
