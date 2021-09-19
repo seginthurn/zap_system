@@ -13,8 +13,10 @@ export const slice = createSlice({
             }
         }
     }
-})
+});
 
 export const { changeTrigger } = slice.actions;
 export default slice.reducer;
 export const selectTrigger = state => state.trigger.name;
+
+

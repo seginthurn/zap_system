@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
-import { Select, FormControl, InputLabel, MenuItem, makeStyles } from '@material-ui/core';
+import { Select, FormControl, InputLabel, MenuItem } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectChannel, changeChannel } from '../../redux/channelSlice';
 
 const ChannelSelect = () => {
     const channel = useSelector(selectChannel);
-    const [apiData, setApiData] = useState([]);
     const dispatch = useDispatch();
+    const [apiData, setApiData] = useState([]);
+
 
     const getApi = async () => {
         try {
@@ -53,3 +54,5 @@ const ChannelSelect = () => {
 }
 
 export default ChannelSelect;
+
+

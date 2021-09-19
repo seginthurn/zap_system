@@ -1,53 +1,39 @@
 {
   "messages": [
     {
-      "id": 1,
       "channel": "sms",
       "trigger": "abertura_conta",
-      "timer": "15:00",
-      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
+      "timer": "07:00",
+      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
+      "id": 1
     },
     {
-      "id": 21,
       "channel": "sms",
-      "trigger": "fez_pix",
-      "timer": "5:00",
-      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
-    },
-    {
-      "id": 1,
-      "channel": "whatsapp",
       "trigger": "abertura_conta",
-      "timer": "73:00",
-      "message": " Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem"
+      "timer": "9999",
+      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
+      "id": 2
     },
     {
-      "id": 1631312843768,
-      "channel": "whatsapp",
-      "trigger": "criou_chave_pix",
-      "timer": "12:00",
-      "message": "vI  que você criou um chave ?"
+      "channel": "sms",
+      "trigger": "abertura_conta",
+      "timer": "18:45",
+      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
+      "id": 3
     },
     {
-      "id": 1631313726738,
-      "channel": "email",
-      "trigger": "fez_pix",
-      "timer": "2323",
-      "message": "23232323"
+      "channel": "sms",
+      "trigger": "abertura_conta",
+      "timer": "18:45",
+      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
+      "id": 4
     },
     {
-      "channel": "email",
-      "trigger": "nova_chave_pix",
-      "timer": "20:25",
-      "message": "Oi, será que podemos falar sobre sua conta",
-      "id": 1631313726739
-    },
-    {
-      "channel": "asdfa",
-      "trigger": "asdfas",
-      "timer": "asdfa",
-      "message": "asdfasd",
-      "id": 1631313726740
+      "channel": "sms",
+      "trigger": "abertura_conta",
+      "timer": "18:45",
+      "message": "Na correria do dia a dia a Oi Conta Zap te ajuda a lembrar de algumas coisinhas! Ja conseguiu pagar seu boleto? Se sim, desconsidere a mensagem",
+      "id": 5
     }
   ],
   "channels": [

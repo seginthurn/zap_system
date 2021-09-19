@@ -1,21 +1,11 @@
 import React from 'react';
 import LineChart from '../../components/LineChart';
-import { Grid, Paper, makeStyles, } from '@material-ui/core';
-
-
-const useStyles = makeStyles({
-    root: {
-        padding: '10px',
-        marginTop: '100px'
-    },
-
-})
-
+import { Grid } from '@mui/material';
+import './Dashboard.css';
 
 const Dashboard = () => {
-    const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <div className="Dashboard">
             <Grid container spacing={2}>
                 <Grid item sm={1} />
                 <Grid item xs={12} sm={4}>
@@ -30,3 +20,5 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
+

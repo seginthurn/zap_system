@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
+import MessageForm from '../pages/MessageForm';
 import Messages from '../pages/Messages';
 
 const Routes = () => {
@@ -8,11 +9,16 @@ const Routes = () => {
             <Route path="/" exact>
                 <Dashboard />
             </Route>
-            <Route path="/messages">
+            <Route path="/mensagens" exact>
                 <Messages />
+            </Route>
+            <Route path="/mensagens/nova_mensagem">
+                <MessageForm />
             </Route>
         </Switch>
     )
 }
 
 export default Routes;
+
+

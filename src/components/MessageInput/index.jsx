@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
 import { TextField, FormControl } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectMessage, changeMessage } from '../../redux/messageSlice';
+import { selectMessage } from '../../redux/messageSlice';
 import { selectTrigger } from '../../redux/triggerSlice';
 import { selectChannel } from '../../redux/channelSlice';
 
@@ -11,8 +11,6 @@ const MessageInput = () => {
     const trigger = useSelector(selectTrigger);
     const channel = useSelector(selectChannel);
     const [messageField, setMessageField] = useState('')
-
-
     const [apiData, setApiData] = useState([]);
     const dispatch = useDispatch();
 
@@ -41,3 +39,5 @@ const MessageInput = () => {
 }
 
 export default MessageInput;
+
+

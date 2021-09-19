@@ -12,4 +12,6 @@ export default configureStore({
         timer: timerSlice
 
     }
-})
+});
+
+

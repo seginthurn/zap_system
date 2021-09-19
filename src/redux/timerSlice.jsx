@@ -13,8 +13,10 @@ export const slice = createSlice({
             }
         }
     }
-})
+});
 
 export const { changeTimer } = slice.actions;
 export default slice.reducer;
 export const selectTimer = state => state.timer.timer;
+
+

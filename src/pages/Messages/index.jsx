@@ -1,57 +1,81 @@
-import { Typography, Grid, makeStyles, Button, InputLabel, FormControl, Input, FormHelperText } from '@material-ui/core';
-import React, { useState } from 'react';
-import ChannelSelect from '../../components/ChannelSelect';
-import TriggerSelect from '../../components/TriggerSelect';
-import MessageInput from '../../components/MessageInput';
+import { Typography, Grid, Button, Divider } from '@material-ui/core';
+import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import TimerInput from '../../components/TimerInput';
+import TriggerSelect from '../../components/TriggerSelect';
+import ChannelSelect from '../../components/ChannelSelect';
+import MessagesTable from '../../components/MessagesTable';
+import { selectTrigger } from '../../redux/triggerSlice';
+import { selectTimer } from '../../redux/timerSlice';
+import { selectChannel } from '../../redux/channelSlice';
+import api from '../../api/api';
+import { changeMessage } from '../../redux/messageSlice';
+import { Link } from 'react-router-dom';
+import './Messages.css';
 
-const useStyles = makeStyles({
-    root: {
-        marginTop: "100px"
-    }
-})
+function Messages() {
+    const trigger = useSelector(selectTrigger);
+    const timer = useSelector(selectTimer);
+    const channel = useSelector(selectChannel);
+    const dispatch = useDispatch();
 
-const Messages = () => {
-    const classes = useStyles();
-    const [error, setError] = useState(false);
-    const [form, setForm] = useState('');
 
-    function handleInputForm(event) {
-        event.preventDefault();
-        if (!form || form != 'Gabriel') {
-            setError(true);
-            console.log(error)
-        } else if (form === '') {
-            setError(false);
+    const handleSearch = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await api.get(`/messages?trigger_like=${trigger}&&channel_like=${channel}&&timer_like=${timer}`);
+            dispatch(changeMessage(response.data));
+        } catch (error) {
+            alert("Pesquisa inválida")
         }
     }
 
     return (
-        <React.Fragment>
-            <Grid container className={classes.root} spacing={2}>
-                <Grid item sx={12} sm={6}>
+        <div className="Messages">
+            <Grid container spacing={1} alignItems="center">
+                <Grid item xs={8}>
                     <Typography variant="h3" color="primary">Mensagens</Typography>
                 </Grid>
-                <Grid item sx={6}>
-                    <Button variant="outlined" color="primary">Pequisar</Button>
+                <Grid item>
+                    <Button variant="outlined" color="primary" onClick={e => handleSearch(e)}>Pesquisar</Button>
                 </Grid>
-                <Grid item sx={6}>
-                    <Button variant="contained" color="primary">Nova Mensagem</Button>
+                <Grid item>
+                    <Button variant="contained" color="primary">
+                        <Link to='/mensagens/nova_mensagem' className="link">Nova Mensagem</Link>
+                    </Button>
                 </Grid>
             </Grid>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={3}>
+
+            <Grid container spacing={1} alignItems="center">
+                <Grid item xs={4}>
                     <TriggerSelect />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs>
                     <ChannelSelect />
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <TimerInput />
+                <Grid item xs >
+                    <form onSubmit={e => handleSearch(e)}>
+                        <TimerInput />
+                    </form>
                 </Grid>
             </Grid>
-        </React.Fragment>
+
+            <Grid >
+                <Grid>
+                    <Divider />
+                </Grid>
+            </Grid>
+
+            <Grid container>
+                <Grid item xs={12}>
+                    <MessagesTable />
+                </Grid>
+            </Grid>
+        </div>
     );
 }
 
 export default Messages;
+
+

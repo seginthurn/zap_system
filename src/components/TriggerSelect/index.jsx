@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api/api";
-import { Select, FormControl, InputLabel, MenuItem, makeStyles } from '@material-ui/core';
+import { Select, FormControl, InputLabel, MenuItem} from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTrigger, changeTrigger } from '../../redux/triggerSlice';
 
@@ -56,3 +56,5 @@ const TriggerSelect = () => {
 }
 
 export default TriggerSelect;
+
+
