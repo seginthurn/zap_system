@@ -27,7 +27,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou as dependências corretamente (veja o tutorial abaixo)
 * Você não tem nenhuma aplicação rodando nas portas 3000/4000.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando Zap_System
 
 Instale as dependências listadas acima, ou apenas execute o comando:
 
